@@ -1,6 +1,11 @@
 import React from 'react';
+import { AppModel } from '../../types/App';
 
-const AppAbout: React.FC = () => {
+interface Props {
+  app: AppModel;
+}
+
+const AppAbout: React.FC<Props> = ({ app }) => {
   return (
     <div className="mb-4">
       <h4>About This App</h4>

@@ -36,8 +36,11 @@ const mediaItems: MediaItem[] = [
   }
 ];
 
+interface Props {
+  appId: string;
+}
 
-const AppMediaSlider: React.FC = () => {
+const AppMediaSlider: React.FC<Props> = ({ appId }) => {
   const [selectedItem, setSelectedItem] = useState<MediaItem | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -71,9 +74,9 @@ const AppMediaSlider: React.FC = () => {
     );
   };
 
-  const thumbnailTemplate = (item: MediaItem) => (
-    <img src={item.thumbnail} alt={item.alt} style={{ width: '100%' }} />
-  );
+  // const thumbnailTemplate = (item: MediaItem) => (
+  //   <img src={item.thumbnail} alt={item.alt} style={{ width: '100%' }} />
+  // );
 
   return (
     <div className="mb-5">

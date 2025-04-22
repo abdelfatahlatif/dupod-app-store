@@ -25,8 +25,8 @@ const AppDetailsPage = () => {
  return (
     <div className="container mt-4">
       <AppHeader app={app} />
-      <AppAbout />
-      <AppMediaSlider />
+      <AppAbout app={app}/>
+      <AppMediaSlider appId={app.id.toString()}/>
       <AppComments appId={app.id.toString()} />
     </div>
   );
