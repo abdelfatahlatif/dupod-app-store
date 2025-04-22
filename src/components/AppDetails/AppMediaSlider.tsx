@@ -80,7 +80,7 @@ const AppMediaSlider: React.FC<Props> = ({ appId }) => {
 
   return (
     <div className="mb-5">
-      <h4>Media</h4>
+      <h4>Media {appId}</h4>
       <Galleria
         value={mediaItems}
         //numVisible={3}

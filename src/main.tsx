@@ -12,7 +12,7 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Router>
+    <Router basename="/dupod-app-store">
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/apps/:id" element={<AppDetailsPage />} />

@@ -76,7 +76,7 @@ const AppComments: React.FC<Props> = ({ appId }) => {
 
   return (
     <div className="mb-5">
-      <h4>Comments</h4>
+      <h4>Comments {appId}</h4>
       <div className="mb-3">
         <strong>Average Rating: </strong>
         <Rating value={parseFloat(avgRating)} readOnly cancel={false} />
