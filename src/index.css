@@ -114,3 +114,59 @@ button:focus-visible {
 .p-card .p-card-title {  
    margin-bottom: 0 !important;;
 }
+
+.p-galleria .p-galleria-thumbnail-container {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.p-galleria .p-galleria-item-prev, 
+.p-galleria .p-galleria-item-next {
+  top: 50% !important;
+  transform: translateY(-50%);
+  color: #010101;
+  border:#010101;
+}
+
+/* .p-dialog .p-dialog-header-icon svg,
+.p-galleria .p-galleria-item-next svg,
+.p-galleria .p-galleria-item-prev svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: black;
+  display: inline-block;
+} */
+
+.fullscreen-image-dialog.p-dialog {
+  width: 90vw !important;
+  height: 90vh !important;
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: 0;
+ 
+  /* border-radius:0;
+  box-shadow: none; */
+
+  border-radius: 10px; /* Adjust as needed */
+  overflow: hidden; /* Ensure inner content respects the rounded corners */
+}
+
+.fullscreen-image-dialog .p-dialog-content {
+  padding: 0 !important;
+  overflow: visible;
+  height: 100% !important;
+}
+
+.fullscreen-image {
+  width: 100%;
+  height: 100%;
+  object-fit:fill; /* or 'cover' depending on your goal */
+  display: block;
+}
+
+/* Remove header space from PrimeReact Dialog */
+.fullscreen-image-dialog .p-dialog-header {
+  display: none !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}

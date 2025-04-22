@@ -1,5 +1,5 @@
 import { Dialog } from 'primereact/dialog';
-import { AppModel } from '../types/App';
+import { AppModel } from '../../types/App';
 
 interface Props {
   app?: AppModel;
