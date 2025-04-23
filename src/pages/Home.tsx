@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { fetchApps } from '../services/api';
 import { AppModel } from '../types/App';
 import AppGrid from '../components/AppGrid';
@@ -101,8 +101,9 @@ const Home = () => {
       </ul> */}
 
       <div className="row g-0" style={{ minHeight: '100vh' }}>
-        {/* Left Vendor Menu */}
+        {/* Left Vendor Menu */}        
         <div className="col-md-3 bg-light border-end p-4">
+        <Link to="/admin/apps">Go to Admin Apps</Link>
           <h5>Vendors</h5>
           <VendorMenu
             vendors={vendors}
