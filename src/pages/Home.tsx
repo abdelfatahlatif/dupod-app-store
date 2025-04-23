@@ -83,8 +83,8 @@ const Home = () => {
   };
 
   return (
-    <div className="container-fluid mt-4">
-      <h2 className="text-center mb-4">App Store</h2>
+    <div className="container-fluid px-0">
+      {/* <h2 className="text-center mb-4">App Store</h2> */}
 
       {/* Category Tabs */}
       {/* <ul className="nav nav-tabs mb-3">
@@ -100,9 +100,9 @@ const Home = () => {
         ))}
       </ul> */}
 
-      <div className="row">
+      <div className="row g-0" style={{ minHeight: '100vh' }}>
         {/* Left Vendor Menu */}
-        <div className="col-12 col-md-3 mb-3">
+        <div className="col-md-3 bg-light border-end p-4">
           <h5>Vendors</h5>
           <VendorMenu
             vendors={vendors}
@@ -112,7 +112,7 @@ const Home = () => {
         </div>
 
         {/* Main App Panel */}
-        <div className="col-12 col-md-9">
+        <div className="col-12 col-md-9 p-4">
           <div className="mb-3 d-flex justify-content-between align-items-center">
             <SearchBar value={search} onChange={setSearch} />
           </div>
@@ -139,7 +139,7 @@ const Home = () => {
               <FaList />
             </button>
           </div>
-          
+
           <div className="app-list-container">
             {isGrid ? (
               <AppGrid apps={paginatedApps} onAppClick={handleAppClick} />

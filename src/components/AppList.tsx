@@ -6,7 +6,7 @@ interface Props {
 }
 
 const AppList = ({ apps, onAppClick }: Props) => (
-  <ul className="list-group">
+  <ul className="list-group mt-3 mb-3">
     {apps.map((app) => (
       <li
         key={app.id}

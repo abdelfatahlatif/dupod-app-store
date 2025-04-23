@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import AppHeader from '../components/AppDetails/AppHeader';
 import AppAbout from '../components/AppDetails/AppAbout';
@@ -24,10 +24,12 @@ const AppDetailsPage = () => {
 
  return (
     <div className="container mt-4">
+      <div className='mb-3'><Link to="/">Back to Apps</Link></div>
       <AppHeader app={app} />
       <AppAbout app={app}/>
       <AppMediaSlider appId={app.id.toString()}/>
       <AppComments appId={app.id.toString()} />
+      <div className='mt-3 mb-3'><Link to="/">Back to Apps</Link></div>
     </div>
   );
 };
