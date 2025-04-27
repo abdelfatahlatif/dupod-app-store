@@ -1,38 +1,36 @@
 import React, { useState } from 'react';
 import { Dialog } from 'primereact/dialog';
 import { Galleria } from 'primereact/galleria';
-
+import screen1 from '../../assets/screen1.png';
+import screen2 from '../../assets/screen2.png';
+import screen3 from '../../assets/screen3.png';
+import video1 from '../../assets/Recording 2025-04-27 132616.mp4';
 interface MediaItem {
   type: 'image' | 'video';
   url: string;
-  alt: string;
-  thumbnail: string;
+  thumbnail:string   
 }
 
 const mediaItems: MediaItem[] = [
   {
     type: 'image',
-    url: 'https://picsum.photos/id/1015/800/500',
-    thumbnail: 'https://picsum.photos/id/1015/150/100',
-    alt: 'Mountain Landscape'
+    url: screen1,
+    thumbnail:screen1
   },
   {
     type: 'image',
-    url: 'https://picsum.photos/id/1025/800/500',
-    thumbnail: 'https://picsum.photos/id/1025/150/100',
-    alt: 'Cute Dog'
+    url: screen2,
+    thumbnail:screen2
   },
   {
     type: 'image',
-    url: 'https://picsum.photos/id/1043/800/500',
-    thumbnail: 'https://picsum.photos/id/1043/150/100',
-    alt: 'River Through Forest'
+    url: screen3,
+    thumbnail:screen3   
   },
   {
     type: 'video',
-    url: 'https://www.w3schools.com/html/mov_bbb.mp4',
-    thumbnail: 'https://picsum.photos/id/1043/150/100',
-    alt: 'Big Buck Bunny Video'
+    url: video1,
+    thumbnail:screen1   
   }
 ];
 
@@ -51,10 +49,10 @@ const AppMediaSlider: React.FC<Props> = ({ appId }) => {
         style={{ cursor: 'pointer', height: '400px', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#f9f9f9' }}
       >
         {item.type === 'image' ? (
-          <img src={item.url} alt={item.alt} style={{ maxHeight: '100%', maxWidth: '100%' }} />
+          <img src={item.url} style={{ maxHeight: '100%', maxWidth: '100%' }} />
         ) : (
-          <div style={{ position: 'relative' }}>
-            <img src={item.thumbnail} alt={item.alt} style={{ maxHeight: '100%', maxWidth: '100%' }} />
+          <div style={{ height:'400px' }}>
+            <img src={item.thumbnail} style={{ maxHeight: '100%', maxWidth: '100%' }} />
             <div style={{
               position: 'absolute',
               top: '50%',
@@ -79,8 +77,8 @@ const AppMediaSlider: React.FC<Props> = ({ appId }) => {
   // );
 
   return (
-    <div className="mb-5">
-      <h4>Media {appId}</h4>
+    <div className="mb-5" title={appId}>
+      <h4>Screens and Videos</h4>
       <Galleria
         value={mediaItems}
         //numVisible={3}
@@ -111,7 +109,7 @@ const AppMediaSlider: React.FC<Props> = ({ appId }) => {
         contentStyle={{ padding: 0 }}
       >
         {selectedItem?.type === 'image' ? (
-          <img src={selectedItem.url} alt={selectedItem.alt} className="fullscreen-image" />
+          <img src={selectedItem.url} className="fullscreen-image" />
         ) : (
           <video src={selectedItem?.url} controls autoPlay className="fullscreen-image" />
         )}

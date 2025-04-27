@@ -98,9 +98,13 @@ button:focus-visible {
 
 /* Ensure card is fixed width */
 .app-card {
-  width: 250px;
+  width: 100%;
   cursor: pointer;
+}
 
+.p-card .p-card-title {
+  font-size: 1rem;
+  font-weight: 700;  
 }
 
 .app-description {

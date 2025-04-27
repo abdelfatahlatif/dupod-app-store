@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { fetchApps } from '../services/api';
 import { AppModel } from '../types/App';
 import AppGrid from '../components/AppGrid';
@@ -9,8 +9,9 @@ import FilterPanel from '../components/FilterPanel';
 import SearchBar from '../components/SearchBar';
 import PaginationControl from '../components/PaginationControl';
 import { FaTh, FaList } from 'react-icons/fa';
+import SiteHeader from '../components/SiteHeader';
 
-const PER_PAGE = 5;
+const PER_PAGE = 6;
 
 const Home = () => {
   const [apps, setApps] = useState<AppModel[]>([]);
@@ -99,11 +100,11 @@ const Home = () => {
           </li>
         ))}
       </ul> */}
-
+      <SiteHeader />
       <div className="row g-0" style={{ minHeight: '100vh' }}>
         {/* Left Vendor Menu */}        
-        <div className="col-md-3 bg-light border-end p-4">
-        <Link to="/admin/apps">Go to Admin Apps</Link>
+        <div className="col-md-3 bg-light border-end p-2">
+        {/* <Link to="/admin/apps">Go to Admin Apps</Link> */}
           <h5>Vendors</h5>
           <VendorMenu
             vendors={vendors}
@@ -114,7 +115,7 @@ const Home = () => {
 
         {/* Main App Panel */}
         <div className="col-12 col-md-9 p-4">
-          <div className="mb-3 d-flex justify-content-between align-items-center">
+          <div className="d-flex justify-content-between align-items-center">
             <SearchBar value={search} onChange={setSearch} />
           </div>
 

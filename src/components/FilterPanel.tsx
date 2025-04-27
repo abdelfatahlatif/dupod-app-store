@@ -17,12 +17,13 @@ const FilterPanel: FC<FilterPanelProps> = ({
   onDisciplineChange,
   onVersionChange,
 }) => {
-  const types = ['Tool', 'Utility', 'Type 3']; // Add actual options
-  const disciplines = ['Discipline 1', 'Discipline 2'];
-  const versions = ['2019', '2023'];
+  const types = ['Addins', 'Macros', 'Dynamo','Extensions']; // Add actual options
+  const disciplines = ['Architecture', 'Structure','MEP'];
+  const versions = ['2023', '2024', '2025', '2026'];
 
   return (
-    <div className="mb-3">
+    <div className="row">
+      <div className="col-md-4 ">
       <select
         className="form-select mb-2"
         value={type}
@@ -33,7 +34,8 @@ const FilterPanel: FC<FilterPanelProps> = ({
           <option key={t} value={t}>{t}</option>
         ))}
       </select>
-
+      </div>
+      <div className="col-md-4 ">
       <select
         className="form-select mb-2"
         value={discipline}
@@ -44,7 +46,9 @@ const FilterPanel: FC<FilterPanelProps> = ({
           <option key={d} value={d}>{d}</option>
         ))}
       </select>
+      </div>
 
+      <div className="col-md-4 ">
       <select
         className="form-select mb-2"
         value={version}
@@ -55,6 +59,7 @@ const FilterPanel: FC<FilterPanelProps> = ({
           <option key={v} value={v}>{v}</option>
         ))}
       </select>
+      </div>
     </div>
   );
 };
