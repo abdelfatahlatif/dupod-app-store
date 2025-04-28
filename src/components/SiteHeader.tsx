@@ -30,10 +30,11 @@ const SiteHeader: React.FC = () => {
                 {/* Right Section: Profile */}
                 <div className="d-flex align-items-center">
                     <Button
+                        title='Settings'
                         icon="pi pi-cog"
                         className="p-button-text p-button-plain p-0 m-2"
                         onClick={() => navigate('/admin/apps')}
-                        style={{ fontSize: '1.5rem', marginLeft: '10px',border:'0' }}
+                        style={{ fontSize: '1.5rem', marginLeft: '10px', border: '0' }}
                     />
 
                     <img

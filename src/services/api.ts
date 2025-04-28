@@ -3,9 +3,10 @@ import { AppModel } from '../types/App';
 export const fetchApps = async (): Promise<AppModel[]> => {
   return new Promise((resolve) =>
     setTimeout(() => {
-      resolve([        
+      resolve([
         {
           id: 1,
+          applications: 'Revit',
           name: 'Dupod Structure Wall Framing',
           description: 'The goal of this feature is to enhance and upgrade an existing Revit add-in used by the structural team. The add-in should enable more efficient and flexible framing configurations, including improved management of common settings, wall framing, and profile configurations. The tool should be capable of saving, modifying, and sharing these configurations for use in various projects, with the flexibility to integrate with multiple versions of Revit (2024 and later). This will help streamline workflows, improve user productivity, and ensure the software is aligned with the structural teams specific needs.',
           icon: 'https://i0.wp.com/www.parallaxteam.com/wp-content/uploads/2022/04/2022-04-07_12-28-24-1.png?resize=209%2C218&ssl=1',
@@ -18,20 +19,22 @@ export const fetchApps = async (): Promise<AppModel[]> => {
         {
           id: 2,
           name: 'AutoCAD',
+          applications: 'Revit',
           description: 'The goal of this feature is to enhance and upgrade an existing Revit add-in used by the structural team. The add-in should enable more efficient and flexible framing configurations, including improved management of common settings, wall framing, and profile configurations. The tool should be capable of saving, modifying, and sharing these configurations for use in various projects, with the flexibility to integrate with multiple versions of Revit (2024 and later). This will help streamline workflows, improve user productivity, and ensure the software is aligned with the structural teams specific needs.',
-          icon: 'https://play-lh.googleusercontent.com/y92LD5c5rdlNfquCy-YPNIvdnS4ISEL05wickp28OLya8WlmWQwXfAP0Yys9iTssny3K',
-          type: 'Addins',
+          icon: 'https://i0.wp.com/www.parallaxteam.com/wp-content/uploads/2022/04/2022-04-07_12-28-24-1.png?resize=209%2C218&ssl=1',
+          type: 'Macros',
           vendor: 'Autodesk',
           discipline: 'Architecture',
-          version: '2023',
+          version: '2025',
           category: 'Architecture',
         },
         {
           id: 3,
           name: 'Inventor',
+          applications: 'Revit',
           description: 'The goal of this feature is to enhance and upgrade an existing Revit add-in used by the structural team. The add-in should enable more efficient and flexible framing configurations, including improved management of common settings, wall framing, and profile configurations. The tool should be capable of saving, modifying, and sharing these configurations for use in various projects, with the flexibility to integrate with multiple versions of Revit (2024 and later). This will help streamline workflows, improve user productivity, and ensure the software is aligned with the structural teams specific needs.',
-          icon: 'https://www.imaginit.com/Portals/4/ImageCache/ProductDetails/1_autodesk-inventor-professional-product-icon-128@2x.png',
-          type: 'Addins',
+          icon: 'https://i0.wp.com/www.parallaxteam.com/wp-content/uploads/2022/04/2022-04-07_12-28-24-1.png?resize=209%2C218&ssl=1',
+          type: 'Dynamo',
           vendor: 'Autodesk',
           discipline: 'Structure',
           version: '2023',
@@ -40,6 +43,7 @@ export const fetchApps = async (): Promise<AppModel[]> => {
         {
           id: 4,
           name: 'Navisworks',
+          applications: 'Navisworks',
           description: 'The goal of this feature is to enhance and upgrade an existing Revit add-in used by the structural team. The add-in should enable more efficient and flexible framing configurations, including improved management of common settings, wall framing, and profile configurations. The tool should be capable of saving, modifying, and sharing these configurations for use in various projects, with the flexibility to integrate with multiple versions of Revit (2024 and later). This will help streamline workflows, improve user productivity, and ensure the software is aligned with the structural teams specific needs.',
           icon: 'https://damassets.autodesk.net/content/dam/autodesk/www/product-imagery/svg/product-icon/full/navisworks-manage-full-product-icon.svg',
           type: 'Dynamo',
@@ -51,6 +55,7 @@ export const fetchApps = async (): Promise<AppModel[]> => {
         {
           id: 5,
           name: 'Tekla Structures',
+          applications: 'Tekla Structures',
           description: 'The goal of this feature is to enhance and upgrade an existing Revit add-in used by the structural team. The add-in should enable more efficient and flexible framing configurations, including improved management of common settings, wall framing, and profile configurations. The tool should be capable of saving, modifying, and sharing these configurations for use in various projects, with the flexibility to integrate with multiple versions of Revit (2024 and later). This will help streamline workflows, improve user productivity, and ensure the software is aligned with the structural teams specific needs.',
           vendor: 'Trimble',
           type: 'Extensions',
@@ -62,6 +67,7 @@ export const fetchApps = async (): Promise<AppModel[]> => {
         {
           id: 6,
           name: 'Tekla Structures Designer',
+          applications: 'Tekla Structures Designer',
           description: 'The goal of this feature is to enhance and upgrade an existing Revit add-in used by the structural team. The add-in should enable more efficient and flexible framing configurations, including improved management of common settings, wall framing, and profile configurations. The tool should be capable of saving, modifying, and sharing these configurations for use in various projects, with the flexibility to integrate with multiple versions of Revit (2024 and later). This will help streamline workflows, improve user productivity, and ensure the software is aligned with the structural teams specific needs.',
           vendor: 'Trimble',
           type: 'Extensions',
@@ -73,6 +79,7 @@ export const fetchApps = async (): Promise<AppModel[]> => {
         {
           id: 7,
           name: 'SketchUp',
+          applications: 'SketchUp',
           description: 'The goal of this feature is to enhance and upgrade an existing Revit add-in used by the structural team. The add-in should enable more efficient and flexible framing configurations, including improved management of common settings, wall framing, and profile configurations. The tool should be capable of saving, modifying, and sharing these configurations for use in various projects, with the flexibility to integrate with multiple versions of Revit (2024 and later). This will help streamline workflows, improve user productivity, and ensure the software is aligned with the structural teams specific needs.',
           vendor: 'Trimble',
           type: 'Addins',
@@ -84,6 +91,7 @@ export const fetchApps = async (): Promise<AppModel[]> => {
         {
           id: 8,
           name: 'MicroStation',
+          applications: 'MicroStation',
           description: 'The goal of this feature is to enhance and upgrade an existing Revit add-in used by the structural team. The add-in should enable more efficient and flexible framing configurations, including improved management of common settings, wall framing, and profile configurations. The tool should be capable of saving, modifying, and sharing these configurations for use in various projects, with the flexibility to integrate with multiple versions of Revit (2024 and later). This will help streamline workflows, improve user productivity, and ensure the software is aligned with the structural teams specific needs.',
           vendor: 'Bentley Systems',
           type: 'Extensions',
@@ -95,6 +103,7 @@ export const fetchApps = async (): Promise<AppModel[]> => {
         {
           id: 9,
           name: 'OpenBuildings',
+          applications: 'OpenBuildings',
           description: 'The goal of this feature is to enhance and upgrade an existing Revit add-in used by the structural team. The add-in should enable more efficient and flexible framing configurations, including improved management of common settings, wall framing, and profile configurations. The tool should be capable of saving, modifying, and sharing these configurations for use in various projects, with the flexibility to integrate with multiple versions of Revit (2024 and later). This will help streamline workflows, improve user productivity, and ensure the software is aligned with the structural teams specific needs.',
           vendor: 'Bentley Systems',
           type: 'Macros',
@@ -106,6 +115,7 @@ export const fetchApps = async (): Promise<AppModel[]> => {
         {
           id: 10,
           name: 'OpenRoads',
+          applications: 'OpenRoads',
           description: 'The goal of this feature is to enhance and upgrade an existing Revit add-in used by the structural team. The add-in should enable more efficient and flexible framing configurations, including improved management of common settings, wall framing, and profile configurations. The tool should be capable of saving, modifying, and sharing these configurations for use in various projects, with the flexibility to integrate with multiple versions of Revit (2024 and later). This will help streamline workflows, improve user productivity, and ensure the software is aligned with the structural teams specific needs.',
           vendor: 'Bentley Systems',
           type: 'Macros',
@@ -117,6 +127,7 @@ export const fetchApps = async (): Promise<AppModel[]> => {
         {
           id: 11,
           name: 'ArcGIS',
+          applications: 'ArcGIS',
           description: 'The goal of this feature is to enhance and upgrade an existing Revit add-in used by the structural team. The add-in should enable more efficient and flexible framing configurations, including improved management of common settings, wall framing, and profile configurations. The tool should be capable of saving, modifying, and sharing these configurations for use in various projects, with the flexibility to integrate with multiple versions of Revit (2024 and later). This will help streamline workflows, improve user productivity, and ensure the software is aligned with the structural teams specific needs.',
           vendor: 'ESRI',
           type: 'Macros',
@@ -128,6 +139,7 @@ export const fetchApps = async (): Promise<AppModel[]> => {
         {
           id: 12,
           name: 'Rhino',
+          applications: 'Rhino',
           description: 'The goal of this feature is to enhance and upgrade an existing Revit add-in used by the structural team. The add-in should enable more efficient and flexible framing configurations, including improved management of common settings, wall framing, and profile configurations. The tool should be capable of saving, modifying, and sharing these configurations for use in various projects, with the flexibility to integrate with multiple versions of Revit (2024 and later). This will help streamline workflows, improve user productivity, and ensure the software is aligned with the structural teams specific needs.',
           vendor: 'McNeel & Associates',
           type: 'Dynamo',
