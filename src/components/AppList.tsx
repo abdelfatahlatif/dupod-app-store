@@ -10,7 +10,7 @@ const AppList = ({ apps, onAppClick }: Props) => (
     {apps.map((app) => (
       <li
         key={app.id}
-        className="list-group-item d-flex align-items-center mb-3"  
+        className="list-group-item d-flex align-items-center mb-3"
         onClick={() => onAppClick(app)}
         style={{
           cursor: 'pointer',
@@ -63,16 +63,25 @@ const AppList = ({ apps, onAppClick }: Props) => (
           onClick={async (e) => {
             e.stopPropagation(); // Prevent triggering onAppClick
             try {
-              const response = await fetch(app.icon); // fetch the file
-              const blob = await response.blob(); // create a blob
-              const url = window.URL.createObjectURL(blob); // create temporary url
+              const baseUrl = import.meta.env.BASE_URL || '/'
+              const url = `${baseUrl}yarn-1.22.22.msi`;; // Public path
               const link = document.createElement('a');
               link.href = url;
-              link.download = `${app.name}.png`; // set download filename
+              link.download = 'yarn-1.22.22.msi'; // Name when downloaded
               document.body.appendChild(link);
               link.click();
-              link.remove();
-              window.URL.revokeObjectURL(url); // clean up
+              document.body.removeChild(link);
+
+              // const response = await fetch(app.icon); // fetch the file
+              // const blob = await response.blob(); // create a blob
+              // const url = window.URL.createObjectURL(blob); // create temporary url
+              // const link = document.createElement('a');
+              // link.href = url;
+              // link.download = `${app.name}.png`; // set download filename
+              // document.body.appendChild(link);
+              // link.click();
+              // link.remove();
+              // window.URL.revokeObjectURL(url); // clean up
             } catch (error) {
               console.error('Download failed', error);
             }
@@ -86,7 +95,7 @@ const AppList = ({ apps, onAppClick }: Props) => (
           className="btn btn-outline-success btn-sm"
           onClick={(e) => {
             e.stopPropagation(); // Prevent triggering onAppClick
-            alert(`Install action for ${app.name}`);
+            alert(`Installing ${app.name}...`);
           }}
         >
           <i className="pi pi-check-circle"></i> Install

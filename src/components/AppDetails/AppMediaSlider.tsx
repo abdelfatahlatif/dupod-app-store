@@ -5,6 +5,7 @@ import screen1 from '../../assets/screen1.png';
 import screen2 from '../../assets/screen2.png';
 import screen3 from '../../assets/screen3.png';
 import video1 from '../../assets/Recording 2025-04-27 132616.mp4';
+
 interface MediaItem {
   type: 'image' | 'video';
   url: string;

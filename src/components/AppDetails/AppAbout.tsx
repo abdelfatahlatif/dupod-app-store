@@ -7,13 +7,14 @@ interface Props {
 
 const AppAbout: React.FC<Props> = ({ app }) => {
   return (
-    <div className="mb-4">
+    <div className="mb-4" title={app.id.toString()}>
       <h4>About This App</h4>
       <ul>
-        <li>Feature 1: Lorem ipsum dolor sit amet. {app.description}</li>
-        <li>Feature 2: Consectetur adipiscing elit.</li>
-        <li>Feature 3: Integer molestie lorem at massa.</li>
-        <li>Feature 4: Facilisis in pretium nisl aliquet.</li>
+        <li>Enhance the tool’s functionality by allowing the structural team to configure and manage framing systems more efficiently.</li>
+        <li>Ensure compatibility across multiple versions of Revit (2024 and up).</li>
+        <li>Increase collaboration and usability by creating a centralized repository for configurations, accessible via cloud storage.</li>
+        <li>Provide flexibility for structural designers to define custom configurations and share them easily with team members.</li>
+        <li>Support incremental development through clear user stories, acceptance criteria, and iterative releases.</li>
       </ul>
     </div>
   );

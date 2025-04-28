@@ -14,16 +14,25 @@ const AppCard: React.FC<Props> = ({ app, onClick }) => {
     e.stopPropagation(); // prevent triggering card click
 
     try {
-      const response = await fetch(app.icon); // fetch the file
-      const blob = await response.blob(); // create a blob
-      const url = window.URL.createObjectURL(blob); // create temporary url
+      const baseUrl = import.meta.env.BASE_URL || '/'
+      const url = `${baseUrl}yarn-1.22.22.msi`;; // Public path
       const link = document.createElement('a');
       link.href = url;
-      link.download = `${app.name}.png`; // set download filename
+      link.download = 'yarn-1.22.22.msi'; // Name when downloaded
       document.body.appendChild(link);
       link.click();
-      link.remove();
-      window.URL.revokeObjectURL(url); // clean up
+      document.body.removeChild(link);
+
+      // const response = await fetch(app.icon); // fetch the file
+      // const blob = await response.blob(); // create a blob
+      // const url = window.URL.createObjectURL(blob); // create temporary url
+      // const link = document.createElement('a');
+      // link.href = url;
+      // link.download = `${app.name}.png`; // set download filename
+      // document.body.appendChild(link);
+      // link.click();
+      // link.remove();
+      // window.URL.revokeObjectURL(url); // clean up
     } catch (error) {
       console.error('Download failed', error);
     }

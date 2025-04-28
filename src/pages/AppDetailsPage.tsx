@@ -32,8 +32,11 @@ const AppDetailsPage = () => {
 
         {/* <div className='mb-3'><Link to="/">Back to Apps</Link></div> */}
         <AppHeader app={app} />
+        <hr/>
         <AppAbout app={app} />
+        <hr/>
         <AppMediaSlider appId={app.id.toString()} />
+        <hr/>
         <AppComments appId={app.id.toString()} />
         {/* <div className='mt-3 mb-3'><Link to="/">Back to Apps</Link></div> */}
       </div>

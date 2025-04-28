@@ -76,15 +76,13 @@ const AppComments: React.FC<Props> = ({ appId }) => {
 
   return (
     <div className="mb-5">
-      <h4>Comments {appId}</h4>
+      <h4 title={appId}>Comments </h4>
       <div className="mb-3">
-        <strong>Average Rating: </strong>
+        <strong>Average Rating: <span className="ms-2">({avgRating})</span></strong>
         <Rating value={parseFloat(avgRating)} readOnly cancel={false} />
-        <span className="ms-2">({avgRating})</span>
       </div>
 
       <div className="mb-4">
-        <Rating value={rating} cancel={false} onChange={(e) => setRating(e.value ?? 0)} />
         <InputTextarea
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
@@ -92,8 +90,14 @@ const AppComments: React.FC<Props> = ({ appId }) => {
           cols={50}
           placeholder="Leave a comment..."
         />
-        <div className="mt-2">
-          <Button label="Submit" className="btn btn-primary"  onClick={handleAddComment} />
+        <div>
+        <span>Rate:</span>
+          <span>            
+            <Rating value={rating} cancel={false} onChange={(e) => setRating(e.value ?? 0)} />
+          </span>
+        </div>
+        <div className='mt-2'>
+          <Button label="Submit" className="btn btn-primary" onClick={handleAddComment} />
         </div>
       </div>
 
@@ -106,7 +110,7 @@ const AppComments: React.FC<Props> = ({ appId }) => {
           <Button
             label="Reply"
             size="small"
-            className=" btn btn-primary" 
+            className=" btn btn-primary"
             link
             onClick={() => setReplyTo(c.id)}
           />
@@ -124,10 +128,10 @@ const AppComments: React.FC<Props> = ({ appId }) => {
                 cols={50}
                 placeholder="Your reply..."
               />
-              <br/>
+              <br />
               <Button
                 label="Submit Reply"
-                className="mt-1 btn btn-primary" 
+                className="mt-1 btn btn-primary"
                 size="small"
                 onClick={() => handleReply(c.id)}
               />
