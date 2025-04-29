@@ -48,14 +48,14 @@ const AppCard: React.FC<Props> = ({ app, onClick }) => {
     <Card
       title={app.name}
       subTitle={`${app.vendor} | v${app.version}`}
-      className="m-2 shadow-sm app-card"
+      className="m-2 app-card light-background"
       onClick={onClick}
       header={
         <div className="app-card-header" style={{ justifyContent: 'center', display: 'flex' }}>
           <img
             src={app.icon}
             alt={app.name}
-            className="app-icon"
+            className="app-icon mt-2"
             style={{ width: '50px', height: '50px' }}
           />
         </div>

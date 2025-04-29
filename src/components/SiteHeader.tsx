@@ -10,8 +10,8 @@ import { Button } from 'primereact/button';
 const SiteHeader: React.FC = () => {
     const navigate = useNavigate();
     return (
-        <header className="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-2">
-            <div className="container-fluid d-flex justify-content-between align-items-center">
+        <header className="navbar navbar-expand-lg navbar-light light-background  mb-2">
+            <div className="container d-flex justify-content-between align-items-center">
 
                 {/* Left Section: Logo and Company Title */}
                 <div className="d-flex align-items-center">
@@ -23,7 +23,7 @@ const SiteHeader: React.FC = () => {
                             width={150}
                             height={50}
                         />
-                        <span className="h5 mb-0 fw-bold">Dupod Digital Add-ins Store</span>
+                        <span className="h5 mb-0 fw-bold">Dupod Digital App Store</span>
                     </Link>
                 </div>
 

@@ -12,7 +12,7 @@ const ApplicationsCards = ({ apps, onAppSelect }: Props) => {
             {apps.map((app) => (
                 <div className="col-md-4 mb-3" key={app.id}>
                     <Card
-                        className="shadow-sm"
+                        className=""
                         onClick={() => onAppSelect(app)}
                         style={{ cursor: 'pointer', height: '100%' }}
                         header={
@@ -20,7 +20,7 @@ const ApplicationsCards = ({ apps, onAppSelect }: Props) => {
                                 <img
                                     src={app.icon}
                                     alt={app.applications}
-                                    className="app-icon"
+                                    className="app-icon mt-2"
                                     style={{ width: '80px', height: '80px' }}
                                 />
                             </div>

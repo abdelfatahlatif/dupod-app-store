@@ -9,29 +9,29 @@ import video1 from '../../assets/Recording 2025-04-27 132616.mp4';
 interface MediaItem {
   type: 'image' | 'video';
   url: string;
-  thumbnail:string   
+  thumbnail: string
 }
 
 const mediaItems: MediaItem[] = [
   {
     type: 'image',
     url: screen1,
-    thumbnail:screen1
+    thumbnail: screen1
   },
   {
     type: 'image',
     url: screen2,
-    thumbnail:screen2
+    thumbnail: screen2
   },
   {
     type: 'image',
     url: screen3,
-    thumbnail:screen3   
+    thumbnail: screen3
   },
   {
     type: 'video',
     url: video1,
-    thumbnail:screen1   
+    thumbnail: screen1
   }
 ];
 
@@ -52,7 +52,7 @@ const AppMediaSlider: React.FC<Props> = ({ appId }) => {
         {item.type === 'image' ? (
           <img src={item.url} style={{ maxHeight: '100%', maxWidth: '100%' }} />
         ) : (
-          <div style={{ height:'400px' }}>
+          <div style={{ height: '400px' }}>
             <img src={item.thumbnail} style={{ maxHeight: '100%', maxWidth: '100%' }} />
             <div style={{
               position: 'absolute',
@@ -90,7 +90,7 @@ const AppMediaSlider: React.FC<Props> = ({ appId }) => {
         //showIndicators
         item={itemTemplate}
         //thumbnail={thumbnailTemplate}
-        style={{ maxWidth: '800px', margin: '0 auto', background: '#ffffff' }}
+        style={{ maxWidth: '800px', margin: '0 auto' }}
         circular
         autoPlay={false}
         showThumbnails={false}

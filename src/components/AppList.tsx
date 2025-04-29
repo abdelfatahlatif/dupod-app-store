@@ -25,7 +25,6 @@ const AppList = ({ apps, onAppClick }: Props) => {
             cursor: 'pointer',
             borderRadius: '8px',
             border: '1px solid #dee2e6',
-            backgroundColor: '#fff',
             padding: '10px',
           }}
         >

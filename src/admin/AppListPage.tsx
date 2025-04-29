@@ -1,3 +1,4 @@
+import { Card } from 'primereact/card';
 import { useNavigate } from 'react-router-dom';
 
 const dummyApps = [
@@ -12,33 +13,35 @@ const AppsListPage = () => {
   return (
     <div>
       <h5>Manage Apps</h5>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Version</th>
-            <th>Vendor</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {dummyApps.map((app) => (
-            <tr key={app.id}>
-              <td>{app.name}</td>
-              <td>{app.version}</td>
-              <td>{app.vendor}</td>
-              <td>
-                <button
-                  className="btn btn-primary btn-sm"
-                  onClick={() => navigate(`/admin/apps/${app.id}/edit`)}
-                >
-                  Edit
-                </button>
-              </td>
+      <Card>
+        <table className="table custom-table-bg">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Version</th>
+              <th>Vendor</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {dummyApps.map((app) => (
+              <tr key={app.id}>
+                <td>{app.name}</td>
+                <td>{app.version}</td>
+                <td>{app.vendor}</td>
+                <td>
+                  <button
+                    className="btn btn-primary btn-sm"
+                    onClick={() => navigate(`/admin/apps/${app.id}/edit`)}
+                  >
+                    Edit
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Card>
     </div>
   );
 };

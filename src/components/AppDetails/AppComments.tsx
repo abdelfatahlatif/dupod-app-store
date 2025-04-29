@@ -91,8 +91,8 @@ const AppComments: React.FC<Props> = ({ appId }) => {
           placeholder="Leave a comment..."
         />
         <div>
-        <span>Rate:</span>
-          <span>            
+          <span>Rate:</span>
+          <span>
             <Rating value={rating} cancel={false} onChange={(e) => setRating(e.value ?? 0)} />
           </span>
         </div>
@@ -127,6 +127,7 @@ const AppComments: React.FC<Props> = ({ appId }) => {
                 rows={2}
                 cols={50}
                 placeholder="Your reply..."
+                style={{ background: ' #f6fafd;' }}
               />
               <br />
               <Button

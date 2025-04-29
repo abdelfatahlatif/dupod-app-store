@@ -49,7 +49,7 @@ const Home = () => {
       <SiteHeader />
       <div className="row g-0" style={{ minHeight: '100vh' }}>
         {/* Left Vendor Menu */}
-        <div className="col-md-3 bg-light border-end p-2">
+        <div className="col-md-3 p-2 light-background">
           {/* <Link to="/admin/apps">Go to Admin Apps</Link> */}
           <h5>Vendors</h5>
           <VendorMenu

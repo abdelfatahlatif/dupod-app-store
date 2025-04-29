@@ -10,7 +10,7 @@ const AdminLayout = () => {
 
       <div className="row g-0" style={{ minHeight: '100vh' }}>
         {/* Sidebar */}
-        <div className="col-md-3 bg-light border-end p-4">
+        <div className="col-md-3 p-4">
           {/* <Link to="/">Back to Apps</Link> */}
           <h4 className="mb-4">Admin Panel</h4>
           <div className="list-group">
