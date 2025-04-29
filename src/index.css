@@ -18,6 +18,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -46,9 +47,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -59,9 +62,11 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
@@ -105,7 +110,7 @@ button:focus-visible {
 .p-card .p-card-title {
   font-size: 1rem;
   font-weight: 700;
-  
+
 }
 
 .app-description {
@@ -122,20 +127,21 @@ button:focus-visible {
 
 }
 
-.p-card .p-card-title {  
-   margin-bottom: 0 !important;;
+.p-card .p-card-title {
+  margin-bottom: 0 !important;
+  ;
 }
 
 .p-galleria .p-galleria-thumbnail-container {
   background: rgba(255, 255, 255, 0.9);
 }
 
-.p-galleria .p-galleria-item-prev, 
+.p-galleria .p-galleria-item-prev,
 .p-galleria .p-galleria-item-next {
   top: 50% !important;
   transform: translateY(-50%);
   color: #010101;
-  border:#010101;
+  border: #010101;
 }
 
 /* .p-dialog .p-dialog-header-icon svg,
@@ -153,12 +159,14 @@ button:focus-visible {
   max-width: 90vw;
   max-height: 90vh;
   margin: 0;
- 
+
   /* border-radius:0;
   box-shadow: none; */
 
-  border-radius: 10px; /* Adjust as needed */
-  overflow: hidden; /* Ensure inner content respects the rounded corners */
+  border-radius: 10px;
+  /* Adjust as needed */
+  overflow: hidden;
+  /* Ensure inner content respects the rounded corners */
 }
 
 .fullscreen-image-dialog .p-dialog-content {
@@ -170,7 +178,8 @@ button:focus-visible {
 .fullscreen-image {
   width: 100%;
   height: 100%;
-  object-fit:fill; /* or 'cover' depending on your goal */
+  object-fit: fill;
+  /* or 'cover' depending on your goal */
   display: block;
 }
 
@@ -180,4 +189,131 @@ button:focus-visible {
   height: 0 !important;
   padding: 0 !important;
   margin: 0 !important;
+}
+
+.p-progress-spinner-circle {
+  stroke: #007bff !important;
+}
+
+.footer {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  font-size: 14px;
+  /* padding-bottom: 50px; */
+  position: relative;
+}
+
+.footer .footer-top {
+  padding-top: 20px;
+}
+
+.footer .footer-about .logo {
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-about .logo span {
+  color: var(--heading-color);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: var(--heading-font);
+}
+
+.footer .footer-about p {
+  font-size: 14px;
+  font-family: var(--heading-font);
+}
+
+.footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 50%);
+  font-size: 16px;
+  color: var(--accent-color);
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+}
+
+.footer h4 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-links ul i {
+  padding-right: 2px;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-links ul a {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+  color: var(--accent-color);
+}
+
+.footer .footer-contact p {
+  margin-bottom: 5px;
+}
+
+.footer .copyright {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+.footer .credits {
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.footer .credits a {
+  color: color-mix(in srgb, var(--contrast-color), transparent 30%);
 }

@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { fetchApps } from '../services/api';
 import { AppModel } from '../types/App';
 import SiteHeader from '../components/SiteHeader';
 import VendorMenu from '../components/VendorMenu';
 import ApplicationsCards from '../components/ApplicationsCards';
+import Footer from '../components/Footer';
 
 const Home = () => {
   const [apps, setApps] = useState<AppModel[]>([]);
   const [filteredApps, setFilteredApps] = useState<AppModel[]>([]);
   const [selectedVendor, setSelectedVendor] = useState('');
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchApps().then((data) => setApps(data));
@@ -62,10 +63,15 @@ const Home = () => {
         <div className="col-12 col-md-9 p-4">
 
           <div className="app-list-container">
-            <ApplicationsCards apps={filteredApps}></ApplicationsCards>
+            <ApplicationsCards apps={filteredApps} onAppSelect={(app) => {
+              setSelectedVendor('');
+              navigate(`/apps/${app.applications}`);
+            }} />
+
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

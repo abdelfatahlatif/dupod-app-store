@@ -11,6 +11,7 @@ import PaginationControl from '../components/PaginationControl';
 import { FaTh, FaList } from 'react-icons/fa';
 import SiteHeader from '../components/SiteHeader';
 import { useParams } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 const PER_PAGE = 6;
 
@@ -82,11 +83,13 @@ const AddIns = () => {
     //const categories = ['All', ...Array.from(new Set(apps.map((a) => a.category)))];
 
     const handleAppClick = (app: AppModel) => {
-        navigate(`/apps/${app.id}`);
+        navigate(`/addins/${app.id}`);
     };
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid px-0">
+            <SiteHeader />
+
             {/* <h2 className="text-center mb-4">App Store</h2> */}
 
             {/* Category Tabs */}
@@ -102,7 +105,7 @@ const AddIns = () => {
           </li>
         ))}
       </ul> */}
-            <SiteHeader />
+
             {/* <div className="row g-0" style={{ minHeight: '100vh' }}>      
         <div className="col-md-3 bg-light border-end p-2">          
           <h5>Vendors</h5>
@@ -142,7 +145,7 @@ const AddIns = () => {
                     </button>
                 </div>
 
-                <div className="app-list-container">
+                <div className="app-list-container" style={{ minHeight: '278.521px' }}>
                     {isGrid ? (
                         <AppGrid apps={paginatedApps} onAppClick={handleAppClick} />
                     ) : (
@@ -158,6 +161,7 @@ const AddIns = () => {
                     onPageChange={setCurrentPage}
                 />
             </div>
+            <Footer />
         </div>
         // </div >
     );

@@ -1,16 +1,17 @@
 import { Outlet, NavLink } from 'react-router-dom';
 import SiteHeader from '../components/SiteHeader';
+import Footer from '../components/Footer';
 
 const AdminLayout = () => {
   return (
     <div className="container-fluid px-0">
-      
-        <SiteHeader />
-      
+
+      <SiteHeader />
+
       <div className="row g-0" style={{ minHeight: '100vh' }}>
-        {/* Sidebar */}        
+        {/* Sidebar */}
         <div className="col-md-3 bg-light border-end p-4">
-        {/* <Link to="/">Back to Apps</Link> */}
+          {/* <Link to="/">Back to Apps</Link> */}
           <h4 className="mb-4">Admin Panel</h4>
           <div className="list-group">
             <NavLink
@@ -38,6 +39,7 @@ const AdminLayout = () => {
           <Outlet />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

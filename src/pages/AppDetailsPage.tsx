@@ -8,6 +8,7 @@ import AppComments from '../components/AppDetails/AppComments';
 import { AppModel } from '../types/App';
 import { fetchApps } from '../services/api';
 import SiteHeader from '../components/SiteHeader';
+import Footer from '../components/Footer';
 
 const AppDetailsPage = () => {
   const { id } = useParams();
@@ -32,14 +33,15 @@ const AppDetailsPage = () => {
 
         {/* <div className='mb-3'><Link to="/">Back to Apps</Link></div> */}
         <AppHeader app={app} />
-        <hr/>
+        <hr />
         <AppAbout app={app} />
-        <hr/>
+        <hr />
         <AppMediaSlider appId={app.id.toString()} />
-        <hr/>
+        <hr />
         <AppComments appId={app.id.toString()} />
         {/* <div className='mt-3 mb-3'><Link to="/">Back to Apps</Link></div> */}
       </div>
+      <Footer />
     </>
   );
 };

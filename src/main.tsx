@@ -11,14 +11,16 @@ import 'primeicons/primeicons.css';
 import './index.css';
 import AdminRoutes from './admin/AdminRoutes';
 import AddIns from './pages/Addins';
+import PageLoader from './components/PageLoader';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Router basename="/dupod-app-store">
+      <PageLoader />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/addins/:appName" element={<AddIns />} />
-        <Route path="/apps/:id" element={<AppDetailsPage />} />
+        <Route path="/apps/:appName" element={<AddIns />} />
+        <Route path="/addins/:id" element={<AppDetailsPage />} />
         <Route path="/admin/*" element={<AdminRoutes />} />
       </Routes>
     </Router>

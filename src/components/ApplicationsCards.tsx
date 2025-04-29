@@ -1,21 +1,19 @@
 import { Card } from 'primereact/card';
-import { useNavigate } from 'react-router-dom';
 import { AppModel } from '../types/App';
 
 interface Props {
     apps: AppModel[];
+    onAppSelect: (app: AppModel) => void;
 }
 
-const ApplicationsCards = ({ apps }: Props) => {
-    const navigate = useNavigate();
-
+const ApplicationsCards = ({ apps, onAppSelect }: Props) => {
     return (
         <div className="row">
             {apps.map((app) => (
                 <div className="col-md-4 mb-3" key={app.id}>
                     <Card
                         className="shadow-sm"
-                        onClick={() => navigate(`/addins/${app.applications}`)}
+                        onClick={() => onAppSelect(app)}
                         style={{ cursor: 'pointer', height: '100%' }}
                         header={
                             <div className="app-card-header" style={{ justifyContent: 'center', display: 'flex' }}>
