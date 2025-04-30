@@ -1,47 +1,73 @@
-import { Card } from 'primereact/card';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-const dummyApps = [
-  { id: 1, name: 'App One', version: '1.0', vendor: 'Vendor A' },
-  { id: 2, name: 'App Two', version: '2.1', vendor: 'Vendor B' },
-  { id: 3, name: 'App Three', version: '1.5', vendor: 'Vendor A' },
-];
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
+import { InputText } from 'primereact/inputtext';
+import { AppModel } from '../types/App';
+import { fetchApps } from '../services/api';
 
 const AppsListPage = () => {
+  const [apps, setApps] = useState<AppModel[]>([]);
+  const [globalFilter, setGlobalFilter] = useState<string>('');
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const loadApps = async () => {
+      const data = await fetchApps();
+      setApps(data);
+    };
+
+    loadApps();
+  }, []);
+
+  const iconTemplate = (rowData: AppModel) => (
+    <img
+      src={rowData.icon}
+      alt={rowData.name}
+      style={{ width: '40px', height: '40px', objectFit: 'contain' }}
+    />
+  );
+
+  // const rowClickHandler = (e: { data: AppModel }) => {
+  //   navigate(`/admin/apps/${e.data.id}/edit`);
+  // };
+
   return (
-    <div>
+    <div className='mb-3'>
       <h5>Manage Apps</h5>
-      <Card>
-        <table className="table custom-table-bg">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Version</th>
-              <th>Vendor</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {dummyApps.map((app) => (
-              <tr key={app.id}>
-                <td>{app.name}</td>
-                <td>{app.version}</td>
-                <td>{app.vendor}</td>
-                <td>
-                  <button
-                    className="btn btn-primary btn-sm"
-                    onClick={() => navigate(`/admin/apps/${app.id}/edit`)}
-                  >
-                    Edit
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </Card>
+      <div className="mb-3">
+        <span className="p-input-icon-left w-100">
+          {/* <i className="pi pi-search" /> */}
+          <InputText
+            type="search"
+            value={globalFilter}
+            onChange={(e) => setGlobalFilter(e.target.value)}
+            placeholder="Search apps..."
+            className="form-control"
+          />
+        </span>
+      </div>
+
+      <DataTable
+        value={apps}
+        paginator
+        rows={6}
+        globalFilter={globalFilter}
+        emptyMessage="No apps found."
+        responsiveLayout="scroll"
+        className="p-datatable-striped p-datatable-gridlines custom-table-bg"
+        selectionMode="single"
+        onRowClick={(e) => navigate(`/admin/apps/${(e.data as AppModel).id}/edit`)}
+      >
+        <Column header="" body={iconTemplate} style={{ width: '60px' }} />
+        <Column field="name" header="Name" sortable />
+        <Column field="vendor" header="Vendor" sortable />
+        <Column field="applications" header="Applications" sortable />
+        <Column field="type" header="Type" sortable />
+        <Column field="discipline" header="Discipline" sortable />
+        <Column field="version" header="Version" sortable />
+      </DataTable>
+
     </div>
   );
 };

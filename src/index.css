@@ -64,6 +64,13 @@ body {
 
 }
 
+.p-component {
+  font-family: var(--default-font);
+  font-feature-settings: var(--font-feature-settings, normal);
+  font-size: 1rem;
+  font-weight: normal;
+}
+
 a {
   color: var(--accent-color);
   text-decoration: none;

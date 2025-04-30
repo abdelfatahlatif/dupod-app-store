@@ -35,7 +35,7 @@ const AdminLayout = () => {
         </div>
 
         {/* Main Content */}
-        <div className="col-md-9 p-4">
+        <div className="col-md-9">
           <Outlet />
         </div>
       </div>
