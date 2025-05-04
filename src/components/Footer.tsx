@@ -6,7 +6,7 @@ const Footer = () => {
                 <div className="container footer-top">
                     <div className="row gy-4">
                         <div className="col-lg-5 col-md-12 footer-about">
-                            <a href="index.html" className="logo d-flex align-items-center">
+                            <a href="#" className="logo d-flex align-items-center">
                                 <span className="sitename">Dupod Digital App Store</span>
                             </a>
                             <p>Our platform simplifies apps management with intuitive tools for seamless collaboration, efficient workflows, and real-time tracking—designed to enhance productivity and ensure project success.</p>

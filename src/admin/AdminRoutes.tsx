@@ -2,7 +2,8 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import AdminLayout from './AdminLayout';
 import AppsListPage from './AppListPage';
 import EditAppPage from './EditAppPage';
-import WorkflowConfigPage from './WorkflowConfig';
+import WorkflowConfigPage from './WorkflowConfigList';
+import WorkflowConfigEdit from './WorkflowConfigEdit';
 
 const AdminRoutes = () => (
   <Routes>
@@ -11,6 +12,7 @@ const AdminRoutes = () => (
       <Route path="apps" element={<AppsListPage />} />
       <Route path="apps/:id/edit" element={<EditAppPage />} />
       <Route path="workflow" element={<WorkflowConfigPage />} />
+      <Route path="workflow/edit/:id" element={<WorkflowConfigEdit />} />
     </Route>
   </Routes>
 );
