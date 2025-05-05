@@ -87,7 +87,7 @@ const AddIns = () => {
     };
 
     return (
-        <div className="container-fluid px-0">
+        <div className="container-fluid px-0" >
             <SiteHeader />
 
             {/* <h2 className="text-center mb-4">App Store</h2> */}
@@ -117,7 +117,7 @@ const AddIns = () => {
         </div> */}
 
             {/* Main App Panel */}
-            <div className="col-12 p-4">
+            <div className="col-12 p-4" style={{ minHeight: '100vh' }}>
                 <div className="d-flex justify-content-between align-items-center">
                     <SearchBar value={search} onChange={setSearch} />
                 </div>
